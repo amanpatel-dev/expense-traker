@@ -18,7 +18,7 @@ const transactionRoutes = require("./routes/transactionRoutes");
 
 app.use(cors());
 
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 
 // app.use(bodyParser.json());
 app.use(express.json());
