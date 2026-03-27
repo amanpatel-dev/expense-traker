@@ -24,7 +24,6 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     try {
       await API.delete(`/transactions/${id}`);
-
       // remove from UI instantly
       setTransactions(transactions.filter((t) => t._id !== id));
     } catch (error) {
@@ -42,7 +41,7 @@ const Dashboard = () => {
         <div className="bg-white p-4 rounded-xl shadow">Income</div>
         <div className="bg-white p-4 rounded-xl shadow">Expense</div>
         <div className="bg-white p-4 rounded-xl shadow">Balance</div>
-        <Summary />
+        <Summary transactions={transactions}/>
         <AddTransactions onAdd={handleAdd} />
       </div>
 
